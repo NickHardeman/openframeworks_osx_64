@@ -1,23 +1,79 @@
 #include "testApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup(){
-//    player.loadMovie("fingers.mov");
-//    player.play();
-    grabber.initGrabber(640, 480);
+void testApp::setup() {
+    ofDisableArbTex();
+    player.loadMovie("fingers.mov");
+    player.play();
+    player.setLoopState( OF_LOOP_NORMAL );
+    player.setSpeed( 2.f );
+    
+//    grabber.initGrabber(640, 480);
+    cout << "testApp :: setup : dims = " << player.getWidth() << " x " << player.getHeight() << endl;
+    ofImage img;
+    img.loadImage("http://www.openframeworks.cc/of_inverted.png");
+    
+    players.resize(30);
+    for(int i = 0; i < 30; i++ ) {
+        players[i].loadMovie("fingers.mov");
+        players[i].play();
+        players[i].setLoopState( OF_LOOP_NORMAL );
+        players[i].setSpeed( ofMap(i, 0, 29, .5, 2, true ));
+    }
 }
 
 //--------------------------------------------------------------
-void testApp::update(){
+void testApp::update() {
 //    player.update();
-    grabber.update();
+    
+    cout << "framerate: " << ofGetFrameRate() << endl;
+    
+//    if(player.isLoaded() && player.isFrameNew()) {
+//        cout << "Setting the pixels " << ofGetElapsedTimef() << endl;
+//        unsigned char * pixels = player.getPixels();
+//        
+//        if(!outImage.isAllocated()) {
+//            outImage.allocate( player.getWidth(), player.getHeight(), OF_IMAGE_COLOR );
+//        }
+//        
+//        for(int x = 0; x < player.getWidth(); x++ ) {
+//            for(int y = 0; y < player.getHeight(); y++ ) {
+//                int pixIndex = (y * player.getWidth() + x) * 3;
+//                ofColor tcolor;
+//                tcolor.r = 255 - pixels[pixIndex+0];
+//                tcolor.g = 255 - pixels[pixIndex+1];
+//                tcolor.b = 255 - pixels[pixIndex+2];
+//                outImage.setColor(x, y, tcolor);
+//            }
+//        }
+//        outImage.update();
+//    }
+    
+    
+//    player.setSpeed( 5.f );
+    if(player.getIsMovieDone()) {
+        cout << "the movie is done " << endl;
+    }
+    
+    for(int i = 0; i < players.size(); i++ ) {
+        players[i].update();
+    }
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
+void testApp::draw() {
     ofSetColor(255, 255, 255);
-//    player.draw( 20, 20 );
-    grabber.draw(50, 50 );
+    
+    for(int i = 0; i < players.size(); i++ ) {
+        players[i].draw( (i % 6) * (players[i].getWidth()*.75), floor(i / 6) * (players[i].getHeight()*.75),
+                        players[i].getWidth()*.75,
+                        players[i].getHeight()*.75);
+    }
+    
+    if(player.isLoaded()) {
+//        player.draw( 620, 20 );
+    }
+//    outImage.draw(20, 20 );
 }
 
 //--------------------------------------------------------------

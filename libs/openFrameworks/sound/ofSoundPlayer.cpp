@@ -7,38 +7,49 @@
 
 //--------------------
 void ofSoundStopAll(){
+#ifndef APP_NO_FMOD
 	#ifdef OF_SOUND_PLAYER_FMOD
 		ofFmodSoundStopAll();
 	#endif
+#endif
 }
 
 //--------------------
 void ofSoundSetVolume(float vol){
+#ifndef APP_NO_FMOD
 	#ifdef OF_SOUND_PLAYER_FMOD
 		ofFmodSoundSetVolume(vol);
 	#endif
+#endif
 }
 
 //--------------------
 void ofSoundUpdate(){
+#ifndef APP_NO_FMOD
 	#ifdef OF_SOUND_PLAYER_FMOD
 		ofFmodSoundUpdate();
 	#endif
+#endif
 }
 
 #if !defined(TARGET_ANDROID) && !defined(TARGET_LINUX_ARM)
 //--------------------
 void ofSoundShutdown(){
+#ifndef APP_NO_FMOD
 	#ifdef OF_SOUND_PLAYER_FMOD
 		ofFmodSoundPlayer::closeFmod();
 	#endif
+#endif
 }
 #endif
 
 //--------------------
 float * ofSoundGetSpectrum(int nBands){
+    
 	#ifdef OF_SOUND_PLAYER_FMOD
-		return ofFmodSoundGetSpectrum(nBands);
+        #ifndef APP_NO_FMOD
+            return ofFmodSoundGetSpectrum(nBands);
+        #endif
 	#elif defined(OF_SOUND_PLAYER_OPENAL)
 		return ofOpenALSoundPlayer::getSystemSpectrum(nBands);
 	#else
@@ -52,7 +63,9 @@ float * ofSoundGetSpectrum(int nBands){
 #include "ofSoundPlayer.h"
 //---------------------------------------------------------------------------
 ofSoundPlayer::ofSoundPlayer (){
+#ifndef APP_NO_FMOD
 	player	= ofPtr<OF_SOUND_PLAYER_TYPE>(new OF_SOUND_PLAYER_TYPE);
+#endif
 }
 
 //---------------------------------------------------------------------------

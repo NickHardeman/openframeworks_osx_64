@@ -7,11 +7,21 @@
 		<key>openFrameworks.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<key>openFrameworksNoFMOD.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>2EBB51B21891BAEF0009E903</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E4B27C1410CBEB8E00536013</key>
 		<dict>
 			<key>primary</key>

@@ -23,3 +23,8 @@ ofMesh & ofBitmapStringGetMesh(const string & text, int x, int y);
 ofTexture & ofBitmapStringGetTextureRef();
 ofRectangle ofBitmapStringGetBoundingBox(const string & text, int x, int y);
 
+
+//---------------------------------------------------------------------
+// This is a hack so that I can reset the bitmap texture....
+//---------------------------------------------------------------------
+void ofSetupBitmapFonts();

@@ -139,6 +139,9 @@ void ofRunApp(ofBaseApp * OFSA){
 
 //--------------------------------------
 void ofSetupOpenGL(ofPtr<ofAppBaseWindow> windowPtr, int w, int h, int screenMode){
+
+    window = windowPtr;
+
     if(!ofGetCurrentRenderer()) {
 	#ifdef USE_PROGRAMMABLE_GL
 	    ofPtr<ofBaseRenderer> renderer(new ofGLProgrammableRenderer(false));
@@ -147,8 +150,7 @@ void ofSetupOpenGL(ofPtr<ofAppBaseWindow> windowPtr, int w, int h, int screenMod
 	#endif
 	    ofSetCurrentRenderer(renderer,false);
     }
-
-	window = windowPtr;
+    
 
 	if(ofIsGLProgrammableRenderer()){
         #if defined(TARGET_RASPBERRY_PI)
@@ -221,7 +223,7 @@ void ofSetupOpenGL(int w, int h, int screenMode){
 void ofStopURLLoader();
 
 void ofExitCallback(){
-
+    
 	ofNotifyExit();
 
 	ofRemoveAllURLRequests();
@@ -278,9 +280,11 @@ void ofRunApp(ofPtr<ofBaseApp> OFSA){
 		OFSAptr->mouseX = 0;
 		OFSAptr->mouseY = 0;
 	}
-
+    
 #ifndef TARGET_ANDROID
-	atexit(ofExitCallback);
+//    #ifndef OF_SCREEN_SAVER
+        atexit(ofExitCallback);
+//    #endif
 #endif
 
 	#ifdef WIN32_HIGH_RES_TIMING
@@ -313,7 +317,7 @@ void ofRunApp(ofPtr<ofBaseApp> OFSA){
     ofAddListener(ofEvents().windowResized,OFSA.get(),&ofBaseApp::windowResized,OF_EVENT_ORDER_APP);
     ofAddListener(ofEvents().messageEvent,OFSA.get(),&ofBaseApp::messageReceived,OF_EVENT_ORDER_APP);
     ofAddListener(ofEvents().fileDragEvent,OFSA.get(),&ofBaseApp::dragged,OF_EVENT_ORDER_APP);
-
+    
 	window->runAppViaInfiniteLoop(OFSAptr.get());
 
 }

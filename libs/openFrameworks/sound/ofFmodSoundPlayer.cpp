@@ -1,7 +1,10 @@
+#ifndef APP_NO_FMOD
+
 #include "ofFmodSoundPlayer.h"
 
 
 #include "ofUtils.h"
+
 
 
 bool bFmodInitialized_ = false;
@@ -382,3 +385,4 @@ void ofFmodSoundPlayer::stop(){
 	FMOD_Channel_Stop(channel);
 }
 
+#endif

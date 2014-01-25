@@ -539,3 +539,9 @@ ofRectangle ofBitmapStringGetBoundingBox(const string & text, int x, int y){
 	}
 	return ofRectangle(min.x,min.y,max.x-min.x,max.y-min.y);
 }
+
+//---------------------------------------------------------------------
+void ofSetupBitmapFonts(){
+    bBitmapTexturePrepared=false;
+	prepareBitmapTexture();
+}

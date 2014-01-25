@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7002850E-D1D9-431D-8B50-8263C8EF13FE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>openFrameworksLib</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>45EE67E6-AC7F-4995-953A-46A6ABA55F9E</key>
+		<string>ssh://github.com/vanderlin/ofxiTunesVisualizer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>45EE67E6-AC7F-4995-953A-46A6ABA55F9E</key>
+		<string>../../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/vanderlin/ofxiTunesVisualizer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>45EE67E6-AC7F-4995-953A-46A6ABA55F9E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>45EE67E6-AC7F-4995-953A-46A6ABA55F9E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxiTunesVisualizer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

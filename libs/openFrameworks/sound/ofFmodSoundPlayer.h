@@ -1,16 +1,15 @@
 #pragma once
 
+#ifndef APP_NO_FMOD
 #include "ofConstants.h"
 
 
 #include "ofBaseSoundPlayer.h"
 
-
 extern "C" {
 #include "fmod.h"
 #include "fmod_errors.h"
 }
-
 //		TO DO :
 //		---------------------------
 // 		-fft via fmod, as in the last time...
@@ -79,4 +78,6 @@ class ofFmodSoundPlayer : public ofBaseSoundPlayer {
 		FMOD_CHANNEL * channel;
 		FMOD_SOUND * sound;
 };
+
+#endif
 

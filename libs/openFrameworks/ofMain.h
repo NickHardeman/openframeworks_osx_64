@@ -68,8 +68,10 @@
 
 //--------------------------
 // audio
+#ifndef TARGET_ITUNES
 #include "ofSoundStream.h"
 #include "ofSoundPlayer.h"
+#endif
 
 //--------------------------
 // video

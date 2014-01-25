@@ -24,7 +24,9 @@ void ofSoundShutdown();
 #endif
 
 #ifdef OF_SOUND_PLAYER_FMOD
-#include "ofFmodSoundPlayer.h"
+    #ifndef APP_NO_FMOD
+        #include "ofFmodSoundPlayer.h"
+    #endif
 #define OF_SOUND_PLAYER_TYPE ofFmodSoundPlayer
 #endif
 
