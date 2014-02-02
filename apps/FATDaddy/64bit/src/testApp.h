@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxAVVideoPlayer.h"
+#include "ofxAVFVideoPlayer.h"
 
 class testApp : public ofBaseApp{
 public:
@@ -19,7 +19,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    ofxAVVideoPlayer player;
+    ofxAVFVideoPlayer player;
     ofImage outImage;
-    vector<ofxAVVideoPlayer> players;
+    vector<ofxAVFVideoPlayer> players;
 };
